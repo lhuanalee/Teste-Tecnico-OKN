@@ -1,0 +1,65 @@
+.main__section-carousel {
+  @include flex-box(flex, column, flex-start, center);
+
+  width: 100%;
+
+  margin-top: 193px;
+
+  padding-top: 40px;
+
+  background-color: $color-primary;
+
+  .carousel__container {
+    width: 100%;
+
+    .carousel__item {
+      .carousel__image {
+        width: 100vw;
+        height: 350px;
+
+        object-fit: cover;
+      }
+
+      .article__container-description {
+        width: 90%;
+
+        padding-left: 15px;
+
+        .article__subtitle {
+          color: $black;
+        }
+
+        .article__span {
+          color: $white;
+        }
+
+        .know-more__container {
+          .know-more__title {
+            border: 1px solid $white;
+            color: $white;
+          }
+
+          .know-more__figure {
+            filter: invert(100%);
+          }
+        }
+      }
+    }
+  }
+
+  .carousel__our-projects {
+    @include flex-box(flex, row, center, center);
+
+    width: 100%;
+
+    padding: 30px 0;
+
+    gap: 7px;
+
+    border-top: 1px solid $black;
+
+    border-bottom: 1px solid $black;
+
+    color: $white;
+  }
+}

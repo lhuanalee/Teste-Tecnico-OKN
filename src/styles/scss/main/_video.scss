@@ -1,0 +1,66 @@
+.section__container-video {
+  width: 100vw;
+
+  margin-top: 50px;
+
+  position: relative;
+
+  background: rgba(54, 62, 30, 0.35);
+
+  mix-blend-mode: normal;
+
+  z-index: 2;
+
+  .video__background {
+    width: 100vw;
+    height: 387.56px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    .video__image {
+      width: 100vw;
+
+      height: 387.56px;
+
+      object-fit: cover;
+    }
+  }
+
+  .video__text {
+    @include flex-box(flex, column, center, center);
+
+    height: 387.56px;
+
+    gap: 20px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    background: rgba(54, 62, 30, 0.35);
+
+    .video__play {
+      border: none;
+
+      background: none;
+    }
+
+    .video__title {
+      width: 67%;
+
+      text-align: center;
+
+      color: $white;
+    }
+
+    .video__subtitle {
+      color: $white;
+    }
+  }
+}
