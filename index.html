@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <link rel="shortcut icon" href="./src/assets/images/Favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/styles/css/styles.css">
     <title>FAO | Fundo da Amazônia</title>
 </head>
@@ -18,7 +21,7 @@
         <div class="header__infos">
             <div class="infos__search">
                 <input class="search__input" type="text" placeholder="FAÇA UMA BUSCA">
-                <img class="search__img" src="./src/assets/images/Magnifier.png" alt="Lupa">
+                <img class="search__image" src="./src/assets/images/Magnifier.png" alt="Lupa">
             </div>
     
             <div class="infos__contacts">
@@ -27,35 +30,51 @@
                 <p class="contacts__participate">QUERO PARTICIPAR</p>
             </div>
         </div> 
-        
+
+        <nav class="header__navigation">            
+            <ul class="navigation__list">
+                <li class="navigation__item">O QUE É</li>
+
+                <li class="navigation__item">CONTEXTO</li>
+
+                <li class="navigation__item">QUEM SOMOS</li>
+
+                <li class="navigation__item">QUERO FAZER PARTE
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item">COMO FUNCIONA</li>
+                        <li class="dropdown__item">PORTIFÓLIO DE PROJETOS</li>
+                    </ul>
+                </li>
+
+                <li class="navigation__item">TRANSPARÊNCIA
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item">ATAS</li>
+                        <li class="dropdown__item">RELATÓRIOS</li>
+                        <li class="dropdown__item">LEGISLAÇÃO</li>
+                    </ul>
+                </li>
+
+                <li class="navigation__item">FALE CONOSCO</li>
+            </ul>
+        </nav>
+
         <div class="header__menu">
             <div class="menu__line-one"></div>
             <div class="menu__line-two"></div>
             <div class="menu__line-three"></div>
         </div>
-
-        <nav class="header__navigation">            
-            <ul class="navigation__list">
-                <li class="navigation__item">O QUE É</li>
-                <li class="navigation__item">CONTEXTO</li>
-                <li class="navigation__item">QUEM SOMOS</li>
-                <li class="navigation__item">QUERO FAZER PARTE</li>
-                <li class="navigation__item">TRANSPARÊNCIA</li>
-                <li class="navigation__item">FALE CONOSCO</li>
-            </ul>
-        </nav>
     </header>
 
     <main class="main__container">
         <section class="main__section-intro">
-            <img class="section__image" src="./src/assets/images/River.gif" alt="Rio">
+            <img class="intro__image" src="./src/assets/images/River.gif" alt="Rio">
 
-            <article class="article__container-intro">
-                <p class="article__title">FUNDO DA AMAZÔNIA</p>
+            <article class="intro__container">
+                <p class="intro__title">FUNDO DA AMAZÔNIA</p>
 
-                <h1 class="article__subtitle">TRANSFORMANDO <span class="article__span">O MUNDO</span> ATRAVÉS DA <span class="article__span">SUSTENTABILIDADE</span></h1>
+                <h1 class="intro__subtitle">TRANSFORMANDO<br><span class="intro__span">O MUNDO</span> ATRAVÉS DA <span class="intro__span">SUSTENTABILIDADE</span></h1>
 
-                <p class="article__description">Comprometido com a redução do desmatamento ilegal e a emissão de Gases de Efeito Estufa (GEE) no território paraense, bem como com o cumprimento de metas previstas nas políticas públicas de meio ambiente e desenvolvimento, o Estado do Pará criou o Fundo da Amazônia Oriental (FAO). Um mecanismo operacional e financeiro privado para apoio às políticas públicas e iniciativas sociais, que visa impulsionar o desenvolvimento sustentável no Pará.</p>
+                <p class="intro__description">Comprometido com a redução do desmatamento ilegal e a emissão de Gases de Efeito Estufa (GEE) no território paraense, bem como com o cumprimento de metas previstas nas políticas públicas de meio ambiente e desenvolvimento, o Estado do Pará criou o Fundo da Amazônia Oriental (FAO). Um mecanismo operacional e financeiro privado para apoio às políticas públicas e iniciativas sociais, que visa impulsionar o desenvolvimento sustentável no Pará.</p>
 
                 <div class="know-more__container">
                     <p class="know-more__title">SAIBA MAIS</p>
@@ -68,37 +87,38 @@
         </section>
 
         <section class="main__section-description">
-            <img class="section__image" src="./src/assets/images/Cultivation.png" alt="">
+            <img class="description__image" src="./src/assets/images/Cultivation.png" alt="">
 
-            <article class="article__container-description">
-                <!-- <img class="article__decoration" src="./src/assets/images/Decoration.png" alt=""> -->
+            <article class="description__container">
+                <img class="description__decoration" src="./src/assets/images/Decoration.png" alt="">
 
-                <p class="article__title">QUEM SOMOS</p>
+                <p class="description__title">QUEM SOMOS</p>
 
-                <h1 class="article__subtitle">CUIDANDO DO SEU FUTURO NO PRESENTE</h1>
+                <h1 class="description__subtitle">CUIDANDO DO SEU FUTURO NO PRESENTE</h1>
 
-                <p class="article__description">Um fundo privado que congrega diferentes atores do Poder Público e sociedade civil, para a estruturação de um modelo de desenvolvimento baseado na conservação e na valorização de ativos ambientais no Pará.
+                <p class="description__text">Um fundo privado que congrega diferentes atores do Poder Público e sociedade civil, para a estruturação de um modelo de desenvolvimento baseado na conservação e na valorização de ativos ambientais no Pará.
                 </p>
 
-                <p class="article__description">Com uma governança desenhada em diferentes níveis de atuação, o FAO conta com a participação de representantes: dos Doadores e Financiadores, do Poder Público, da Sociedade Civil e do Setor Privado. Uma multiplicidade de visões, que olham para o futuro, por meio de ações agora.</p>
+                <p class="description__text">Com uma governança desenhada em diferentes níveis de atuação, o FAO conta com a participação de representantes: dos Doadores e Financiadores, do Poder Público, da Sociedade Civil e do Setor Privado. Uma multiplicidade de visões, que olham para o futuro, por meio de ações agora.</p>
+
+                <div class="know-more__container">
+                    <p class="know-more__title">SAIBA MAIS</p>
+    
+                    <figure class="know-more__figure">
+                        <img class="know-more__image" src="./src/assets/images/Arrow.png" alt="Seta">
+                    </figure>
+                </div>
             </article>
-
-            <div class="know-more__container">
-                <p class="know-more__title">SAIBA MAIS</p>
-
-                <figure class="know-more__figure">
-                    <img class="know-more__image" src="./src/assets/images/Arrow.png" alt="Seta">
-                </figure>
-            </div>
         </section>
 
         <section class="main__section-video">
-            <div class="section__container">
+            <div class="video__container">
                 <img src="./src/assets/images/Circle.png" alt="Círculo verde">
-                <div class="section__join-us">
-                    <p class="section__title">JUNTE-SE A NÓS E <span class="section__span">FAÇA PARTE</span> DESSA MUDANÇA!</p>
+                <div class="video__join-us">
+                    <p class="video__title">JUNTE-SE A NÓS E <span class="video__span">FAÇA PARTE</span> DESSA MUDANÇA!</p>
+
                     <div class="know-more__container">
-                        <p class="know-more__title want-to-participate">QUERO PARTICIPAR</p>
+                        <p class="know-more__title">QUERO PARTICIPAR</p>
         
                         <figure class="know-more__figure">
                             <img class="know-more__image" src="./src/assets/images/Arrow.png" alt="Seta">
@@ -106,7 +126,8 @@
                     </div>
                 </div>
             </div>
-            <div class="section__container-video">
+
+            <div class="video__container-background">
                 <iframe src="https://www.youtube.com/embed/5g8IyHvVBL8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                 <figure class="video__background">
@@ -123,20 +144,18 @@
         </section>
 
         <section class="main__section-carousel">
-            <ul class="carousel__container">
+            <ul class="carousel__list">
                 <li class="carousel__item">
                     <img class="carousel__image" src="./src/assets/images/Ecotourism.png" alt="Ecoturismo">
 
-                    <article class="article__container-description">
-                        <!-- <img class="article__decoration" src="./src/assets/images/Decoration.png" alt=""> -->
+                    <article class="carousel__container">
+                        <p class="carousel__title">NOSSOS PROJETOS</p>
         
-                        <p class="article__title">NOSSOS PROJETOS</p>
+                        <h1 class="carousel__subtitle">PROJETO PLANTANDO <span class="carousel__span">OPORTUNIDADES</span></h1>
         
-                        <h1 class="article__subtitle">PROJETO PLANTANDO <span class="article__span">OPOTUNIDADES</span></h1>
+                        <p class="carousel__description">O FAO é uma estratégia de financiamento ambiental pautada em colaborações privadas, em prol do fortalecimento das políticas públicas e das iniciativas sociais focadas em meio ambiente e desenvolvimento no Pará. Os programas e projetos apoiados visam a construção de novas iniciativas para a agenda climática do Pará, objetivando impactos para as comunidades, escalabilidade e compromisso com as metas globais.</p>
         
-                        <p class="article__description">O FAO é uma estratégia de financiamento ambiental pautada em colaborações privadas, em prol do fortalecimento das políticas públicas e das iniciativas sociais focadas em meio ambiente e desenvolvimento no Pará. Os programas e projetos apoiados visam a construção de novas iniciativas para a agenda climática do Pará, objetivando impactos para as comunidades, escalabilidade e compromisso com as metas globais.</p>
-        
-                        <p class="article__description">Conheça os nossos programas e projetos e faça parte dessa estratégia.</p>
+                        <p class="carousel__description">Conheça os nossos programas e projetos e faça parte dessa estratégia.</p>
 
                         <div class="know-more__container">
                             <p class="know-more__title">SAIBA MAIS</p>
@@ -148,38 +167,40 @@
                     </article>                    
                 </li>
             </ul>
+
             <div class="carousel__our-projects">
                 <p>VER TODOS OS PROJETOS</p>
                 <img src="./src/assets/images/Right.png" alt="">
             </div>
         </section>
 
-        <section class="main__section-how-it-works">
-            
+        <section class="main__section-how-it-works">  
             <img class="how-it-works__circle" src="./src/assets/images/AnimatedCircle.png" alt="Junte-se a nós e faça parte dessa mudança">
 
-            <img class="section__image" src="./src/assets/images/Plantation.png" alt="">
+            <img class="how-it-works__image" src="./src/assets/images/Plantation.png" alt="">
 
-            <article class="article__container-description">
-                <p class="article__title">COMO FUNCIONA</p>
+            <article class="how-it-works__container">
+                <p class="how-it-works__title">COMO FUNCIONA</p>
 
-                <h1 class="article__subtitle">UMA VERDADEIRA REVOLUÇÃO AMBIENTAL</h1>
+                <h1 class="how-it-works__subtitle">UMA VERDADEIRA REVOLUÇÃO AMBIENTAL</h1>
 
-                <p class="article__description">Juntar forças em prol da neutralidade climática é a oportunidade que o Pará quer para fazer a diferença. Com recursos que podem vir de múltiplas origens, podendo ser tanto de obrigações legais quanto de doações, o FAO é um fundo que o Governo incentiva, a Sociedade conduz e o mundo apoia. Todos ganham.</p>
+                <p class="how-it-works__description">Juntar forças em prol da neutralidade climática é a oportunidade que o Pará quer para fazer a diferença. Com recursos que podem vir de múltiplas origens, podendo ser tanto de obrigações legais quanto de doações, o FAO é um fundo que o Governo incentiva, a Sociedade conduz e o mundo apoia. Todos ganham.</p>
 
                 <div class="know-more__container">
                     <p class="know-more__title">ENTENDA</p>
     
                     <figure class="know-more__figure">
                         <img class="know-more__image" src="./src/assets/images/Arrow.png" alt="Seta">
+                        
                     </figure>
                 </div>
-            </article>                    
+            </article>      
+                          
         </section>
 
         <div class="square"></div>
 
-        <section class="main__our-values">
+        <section class="main__section-our-values">
             <div class="our-values__container">
                 <div class="our-values__communication-and-responsibility">
                     <article class="our-values__communication">
@@ -200,12 +221,12 @@
                 </div>
             </div>
 
-            <article class="article__container-description">
-                <p class="article__title">NOSSOS VALORES</p>
+            <article class="our-values__article">
+                <p class="our-values__title">NOSSOS VALORES</p>
 
-                <h1 class="article__subtitle">NOSSO JEITO DE OBSERVAR O MUNDO</h1>
+                <h1 class="our-values__subtitle">NOSSO JEITO DE OBSERVAR O MUNDO</h1>
 
-                <p class="article__description">Uma Amazônia conservada e com qualidade de vida para os cerca de 30 milhões de habitantes, que tenha como bases o desenvolvimento sustentável, a redução das desigualdades; o desenvolvimento socioeconômico de baixo carbono; a participação social; a equidade de gênero; e o planejamento de longo prazo associado a uma visão sistêmica.</p>
+                <p class="our-values__description">Uma Amazônia conservada e com qualidade de vida para os cerca de 30 milhões de habitantes, que tenha como bases o desenvolvimento sustentável, a redução das desigualdades; o desenvolvimento socioeconômico de baixo carbono; a participação social; a equidade de gênero; e o planejamento de longo prazo associado a uma visão sistêmica.</p>
             </article>
         </section>
 
@@ -218,7 +239,7 @@
             <ul class="news__list">
                 <li class="news__item">
                     <div class="news__container">
-                        <img src="./src/assets/images/BelemNegocios.png" alt="Belém Negócios">
+                        <img class="news__image" src="./src/assets/images/BelemNegocios.png" alt="Belém Negócios">
 
                         <h3 class="news__title">Fundo Da Amazônia Oriental Capta R$ 6 Milhões Em 5 Meses</h3>
     
@@ -232,7 +253,7 @@
 
                 <li class="news__item">
                     <div class="news__container">
-                        <img src="./src/assets/images/ParaTerraBoa.png" alt="BPará Terra Boa">
+                        <img class="news__image" src="./src/assets/images/ParaTerraBoa.png" alt="BPará Terra Boa">
 
                         <h3 class="news__title">Fundo Da Amazônia Oriental deve entrar em operação em outubro</h3>
     
@@ -246,7 +267,7 @@
 
                 <li class="news__item">
                     <div class="news__container">
-                        <img src="./src/assets/images/CBNAmazonia.png" alt="CBN Amazônia">
+                        <img class="news__image" src="./src/assets/images/CBNAmazonia.png" alt="CBN Amazônia">
 
                         <h3 class="news__title">Fundo Da Amazônia Oriental recebe 1 milhão para projetos</h3>
     
@@ -261,25 +282,73 @@
         </section>
 
         <section class="main__section-form">
-            <h3>FALE CONOSCO</h3>
+            <div class="form__container"> 
+                <img class="form__decoration" src="./src/assets/images/GreenDecoration.png" alt="">
+                
+                <h3 class="form__title">FALE CONOSCO</h3>
 
-            <h2>GOSTOU DO NOSSO <span>TRABLAHO?</span></h2>
-
-            <p>Entre em contato com a gente e faça parte do nosso time ajudando a
-                transformar o futuro através da sustentabilidade.</p>
-
-            <div class="form__contacts">
-                <input type="text" placeholder="NOME:">
-                <input type="text" placeholder="E-MAIL:">
-                <input type="text" placeholder="TELEFONE:">
+                <h2 class="form__subtitle">GOSTOU DO NOSSO <span class="form__span">TRABALHO?</span></h2>
+    
+                <p class="form__description">Entre em contato com a gente e faça parte do nosso time ajudando a
+                    transformar o futuro através da sustentabilidade.</p>
+    
+                <div class="form__contacts">
+                    <input class="contacts__input" type="text" placeholder="NOME:">
+                    <input class="contacts__input" type="email" placeholder="E-MAIL:">
+                    <input class="contacts__input" type="number" placeholder="TELEFONE:">
+                </div>
+    
+                <textarea class="form__textarea" name="message" cols="30" rows="10" placeholder="DEIXE SUA MENSAGEM:"></textarea>
+    
+                <button class="form__button" type="submit">ENVIAR</button>
             </div>
-
-            <textarea name="message" cols="30" rows="10" placeholder="DEIXE SUA MENSAGEM:"></textarea>
-
-            <button>ENVIAR</button>
+            
         </section>
-
     </main>
+
+    <footer class="footer__container">
+        <div class="footer__baseboard">
+            <div class="footer__information">
+                <ul class="information__menu fao">
+                    <li class="information__item-title">FAO</li>
+                    <li class="information__item">O QUE É</li>
+                    <li class="information__item">QUEM SOMOS</li>
+                    <li class="information__item">QUERO FAZER PARTE</li>
+                    <li class="information__item">TRANSPARÊNCIA</li>
+                    <li class="information__item">CONTEXTO</li>
+                </ul>
+    
+                <ul class="information__menu contact">
+                    <li class="information__item-title">CONTATO</li>
+                    <li class="information__item">R. VER. VALDEMAR FERREIRA DE AGUIAR, 13 - CRUZEIRO, TIANGUÁ - CE, 62322-090</li>
+                    <li class="information__item">(11) 90000-0000</li>
+                </ul>
+            </div>
+    
+            <form class="footer__news-form">
+                <h2 class="news-form__title">QUER RECEBER NOTÍCIAS DO FAO?</h2>
+                <input class="news-form__input" type="text" placeholder="NOME">
+                <input class="news-form__input" type="email" placeholder="E-MAIL">
+                
+                <div class="news-form__checkbox">
+                    <input class="checkbox__input" type="checkbox" id="term">
+                    <label class="checkbox__label" for="term">Aceito os <span class="checkbox__span">Termos e condições</span></label>
+                </div>
+    
+                <button class="news-form__button" type="submit">ASSINAR</button>
+            </form>
+
+            <button class="footer__back"><a class="back__start" href="#">VOLTAR AO TOPO<img class="back__image" src="./src/assets/images/Top.png" alt="Seta para cima"></a></button>
+        </div>
+
+        <div class="footer__copyright">
+            <p class="copyright__description">Fundo da Amazônia Oriental Copyright (c) 2022. Todos os direitos Reservados.</p>
+            <div class="copyright__developed">
+                <img src="./src/assets/images/Technology.png" alt="Tecnologia">
+                <p class="copyright__description">Desenvolvido por OKN Technology Agency</p>
+            </div>
+        </div>
+    </footer>
     <script src="./src/js/navbar.js"></script>
 </body>
 </html>
