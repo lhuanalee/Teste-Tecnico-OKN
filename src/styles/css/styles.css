@@ -3,30 +3,46 @@
   margin: 0;
   padding: 0;
   font-style: none;
-  font-family: "Inter", sans-serif;
   text-decoration: none;
   list-style: none;
 }
 
 body {
+  font-family: "Roboto", sans-serif;
   overflow-x: hidden;
 }
-
-body {
-  overflow-x: hidden;
+body::-webkit-scrollbar {
+  width: 7px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+body::-webkit-scrollbar-thumb {
+  border: 3px solid #00a39a;
+  border-radius: 20px;
+  background-color: #00a39a;
 }
 
+@font-face {
+  font-family: "AirbnbCereal_W_Bd";
+  src: url("../../assets/fonts/AirbnbCereal_W_Bd.otf") format("opentype");
+}
+@font-face {
+  font-family: "Brown";
+  src: url("../../assets/fonts/BrownRegular.ttf") format("truetype");
+}
 .header__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 10px;
+  padding: 5px 10px;
   border-bottom: 0.6px solid #000000;
   background-color: #ffffff;
-  position: fixed;
-  z-index: 3;
+}
+.header__container .header__figure {
+  width: 50%;
 }
 .header__container .header__figure .header__logo {
   width: 225px;
@@ -45,7 +61,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 275px;
+  width: 45%;
   border: 0.6px solid #000000;
 }
 .header__container .header__infos .infos__search .search__input {
@@ -53,7 +69,7 @@ body {
   border: none;
   outline: none;
 }
-.header__container .header__infos .infos__search .search__img {
+.header__container .header__infos .infos__search .search__image {
   padding: 10px;
   border-left: 0.6px solid #000000;
   object-fit: cover;
@@ -69,11 +85,6 @@ body {
 }
 .header__container .header__infos .infos__contacts img:hover {
   filter: invert(100%);
-}
-.header__container .header__infos .infos__contacts .infos__social-media {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 .header__container .header__infos .infos__contacts .contacts__facebook {
   padding: 9px 14px;
@@ -96,7 +107,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   padding: 10px 15px;
-  font-size: 15px;
+  font-size: 14px;
   color: #ffffff;
   background-color: #00a39a;
   cursor: pointer;
@@ -132,14 +143,17 @@ body {
   align-items: flex-start;
   width: 100vw;
   min-height: 100vh;
+  padding-top: 20px;
+  gap: 20px;
   position: absolute;
   top: 82px;
   right: 0;
-  gap: 15px;
+  border-top: 0.6px solid #000000;
   background-color: #ffffff;
   transform: translateX(100%);
   transition: transform 0.3s ease-in;
   overflow: auto;
+  z-index: 1;
 }
 .header__container .header__navigation .navigation__list.active {
   transform: translateX(0);
@@ -155,17 +169,84 @@ body {
   }
 }
 .header__container .header__navigation .navigation__list .navigation__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
-  min-width: max-content;
-  padding: 12px;
-  font-size: 15px;
+  width: max-content;
+  padding: 0 12px;
+  font-size: 14px;
   color: #000000;
   opacity: 0;
 }
+.header__container .header__navigation .navigation__list .navigation__item .dropdown__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+.header__container .header__navigation .navigation__list .navigation__item .dropdown__list .dropdown__item {
+  padding-left: 30px;
+}
+@media (min-width: 760px) {
+  .header__container {
+    padding: 10px 20px;
+    position: relative;
+  }
+  .header__container .header__infos {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__container .header__infos .infos__contacts {
+    margin: 0;
+  }
+  .header__container .header__infos .infos__contacts .contacts__participate {
+    width: max-content;
+  }
+  .header__container .header__navigation .navigation__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    min-height: 50px;
+    padding: 0;
+    top: 100px;
+    text-align: center;
+    background-color: #00a39a;
+    transform: translateX(0%);
+  }
+  .header__container .header__navigation .navigation__list .navigation__item {
+    font-weight: 500;
+    position: relative;
+    color: #ffffff;
+    opacity: 1;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .header__container .header__navigation .navigation__list .navigation__item .dropdown__list {
+    display: none;
+  }
+  .header__container .header__menu {
+    width: 0;
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  .header__container {
+    padding: 10px 80px;
+    transition: 1s;
+  }
+}
 
-.main__section-intro {
+.main__container {
+  background: #ffffff;
+  z-index: 10;
+}
+.main__container .main__section-intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -174,13 +255,12 @@ body {
   gap: 20px;
   border-bottom: 0.6px solid #000000;
 }
-.main__section-intro .section__image {
+.main__container .main__section-intro .intro__image {
   min-width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
 }
-
-.article__container-intro {
+.main__container .main__section-intro .intro__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -188,38 +268,40 @@ body {
   width: 90%;
   margin-bottom: 20px;
   padding: 29px;
-  gap: 10px;
+  gap: 20px;
   border: 0.6px solid #000000;
 }
-
-.article__subtitle {
+.main__container .main__section-intro .intro__container .intro__title {
+  font-family: "Brown";
+  letter-spacing: 3px;
+}
+.main__container .main__section-intro .intro__container .intro__subtitle {
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
+  font-family: "AirbnbCereal_W_Bd";
 }
-
-.article__span {
+.main__container .main__section-intro .intro__container .intro__span {
   color: #00a39a;
 }
-
-.article__description {
-  font-size: 15px;
+.main__container .main__section-intro .intro__container .intro__description {
+  font-size: 14px;
 }
-
-.know-more__container {
+.main__container .main__section-intro .intro__container .know-more__container {
   width: 90%;
   display: flex;
   gap: 5px;
 }
-.know-more__container .know-more__title {
-  font-size: 12px;
+.main__container .main__section-intro .intro__container .know-more__container .know-more__title {
+  font-size: 15px;
   font-weight: 400;
   text-transform: uppercase;
-  padding: 13px 15px;
+  padding: 8px 15px;
   border: 1px solid #000000;
   border-radius: 31px;
+  font-family: "Brown";
 }
-.know-more__container .know-more__figure {
+.main__container .main__section-intro .intro__container .know-more__container .know-more__figure {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -227,6 +309,32 @@ body {
   padding: 6px 13px;
   border: 1px solid #000000;
   border-radius: 50%;
+}
+@media (min-width: 760px) {
+  .main__container .main__section-intro {
+    width: 100%;
+    margin-top: 20px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .main__container .main__section-intro .intro__image {
+    min-width: 40%;
+    height: 550px;
+    object-fit: cover;
+  }
+  .main__container .main__section-intro .intro__container {
+    width: 550px;
+    margin: 50px 0 25px 15px;
+  }
+  .main__container .main__section-intro .intro__container .intro__subtitle {
+    max-width: 408px;
+    font-size: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .main__container .main__section-intro .intro__container {
+    margin: 0 auto;
+  }
 }
 
 .main__section-description {
@@ -238,14 +346,15 @@ body {
   padding-bottom: 20px;
   border-bottom: 0.6px solid #000000;
 }
-.main__section-description .section__image {
+.main__section-description .description__image {
   width: 90%;
   height: 270px;
   margin-top: 20px;
   border-left: 50px solid #00a39a;
+  object-fit: cover;
+  object-position: center;
 }
-
-.article__container-description {
+.main__section-description .description__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -254,14 +363,77 @@ body {
   margin: 20px 0;
   gap: 20px;
 }
-.article__container-description .article__decoration {
-  width: 140px;
-  position: absolute;
-  top: -2.5rem;
-  right: -16px;
+.main__section-description .description__container .description__decoration {
+  display: none;
 }
-.article__container-description .article__subtitle {
+.main__section-description .description__container .description__title {
+  font-family: "Brown";
+  letter-spacing: 3px;
+}
+.main__section-description .description__container .description__subtitle {
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "AirbnbCereal_W_Bd";
   color: #00a39a;
+}
+.main__section-description .description__container .description__text {
+  font-size: 14px;
+}
+.main__section-description .description__container .know-more__container {
+  width: 90%;
+  display: flex;
+  gap: 5px;
+}
+.main__section-description .description__container .know-more__container .know-more__title {
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border: 1px solid #000000;
+  border-radius: 31px;
+  font-family: "Brown";
+}
+.main__section-description .description__container .know-more__container .know-more__figure {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 13px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+@media (min-width: 760px) {
+  .main__section-description {
+    padding: 80px 0;
+    flex-direction: row;
+    gap: 10px;
+    position: relative;
+  }
+  .main__section-description .description__image {
+    width: 40%;
+    height: 380px;
+    margin: 0 15px;
+  }
+  .main__section-description .description__container {
+    max-width: 560px;
+    height: 350px;
+    margin: 0 20px;
+    justify-content: space-between;
+    gap: 11px;
+  }
+  .main__section-description .description__container .description__subtitle {
+    width: 332px;
+    font-size: 30px;
+  }
+}
+@media (min-width: 900px) {
+  .main__section-description .description__container .description__decoration {
+    display: flex;
+    position: absolute;
+    top: 80px;
+    right: 0;
+  }
 }
 
 .main__section-video {
@@ -272,22 +444,15 @@ body {
   width: 100%;
   margin-top: 50px;
 }
-.main__section-video .section__container {
+.main__section-video .video__container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 10px;
   min-width: 50%;
+  gap: 10px;
 }
-.main__section-video .section__container .section__circle {
-  min-width: 50px;
-  height: 50px;
-  background-color: #00a39a;
-  border: 1px solid #00a39a;
-  border-radius: 50%;
-}
-.main__section-video .section__container .section__join-us {
+.main__section-video .video__container .video__join-us {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -295,19 +460,230 @@ body {
   min-width: 222px;
   gap: 16px;
 }
-.main__section-video .section__container .section__join-us .section__title {
+.main__section-video .video__container .video__join-us .video__title {
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "AirbnbCereal_W_Bd";
+  max-width: 285px;
+}
+.main__section-video .video__container .video__join-us .video__span {
+  font-family: "AirbnbCereal_W_Bd";
+  color: #00a39a;
+}
+.main__section-video .video__container .video__join-us .know-more__container {
+  width: 90%;
+  display: flex;
+  gap: 5px;
+}
+.main__section-video .video__container .video__join-us .know-more__container .know-more__title {
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 8px 7px;
+  border: 1px solid #000000;
+  border-radius: 31px;
+  font-family: "Brown";
+}
+.main__section-video .video__container .video__join-us .know-more__container .know-more__figure {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 13px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+.main__section-video .video__container-background {
+  width: 100vw;
+  margin-top: 50px;
+  position: relative;
+  background: rgba(54, 62, 30, 0.35);
+  mix-blend-mode: normal;
+  z-index: 2;
+}
+.main__section-video .video__container-background .video__background {
+  width: 100vw;
+  height: 387.56px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.main__section-video .video__container-background .video__background .video__image {
+  width: 100vw;
+  height: 387.56px;
+  object-fit: cover;
+}
+.main__section-video .video__container-background .video__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 387.56px;
+  gap: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(54, 62, 30, 0.35);
+}
+.main__section-video .video__container-background .video__text .video__play {
+  border: none;
+  background: none;
+}
+.main__section-video .video__container-background .video__text .video__title {
+  width: 67%;
+  text-align: center;
+  color: #ffffff;
+}
+.main__section-video .video__container-background .video__text .video__subtitle {
+  color: #ffffff;
+}
+@media (min-width: 760px) {
+  .main__section-video .video__container .video__join-us .video__title {
+    font-size: 30px;
+  }
+  .main__section-video .video__container-background .video__background {
+    height: 600px;
+  }
+  .main__section-video .video__container-background .video__background .video__image {
+    height: 600px;
+  }
+  .main__section-video .video__container-background .video__text {
+    height: 600px;
+  }
+}
+@media (min-width: 1000px) {
+  .main__section-video .video__container-background .video__background {
+    height: 700px;
+  }
+  .main__section-video .video__container-background .video__background .video__image {
+    height: 700px;
+  }
+  .main__section-video .video__container-background .video__text {
+    height: 700px;
+  }
+}
+
+.main__section-carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 193px;
+  padding-top: 40px;
+  background-color: #00a39a;
+}
+.main__section-carousel .carousel__list {
+  width: 100%;
+}
+.main__section-carousel .carousel__list .carousel__item {
+  width: 100%;
+}
+.main__section-carousel .carousel__list .carousel__item .carousel__image {
+  width: 100vw;
+  height: 350px;
+  object-fit: cover;
+}
+.main__section-carousel .carousel__list .carousel__item .carousel__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  padding: 20px;
+  gap: 20px;
+}
+.main__section-carousel .carousel__list .carousel__item .carousel__container .carousel__title {
+  font-family: "Brown";
+  letter-spacing: 3px;
+  color: #000000;
+}
+.main__section-carousel .carousel__list .carousel__item .carousel__container .carousel__subtitle {
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
-  width: 209px;
+  font-family: "AirbnbCereal_W_Bd";
+  color: #000000;
 }
-.main__section-video .section__container .section__join-us .section__span {
-  color: #00a39a;
+.main__section-carousel .carousel__list .carousel__item .carousel__container .carousel__span {
+  color: #ffffff;
 }
-.main__section-video .section__container .section__join-us .want-to-participate {
-  font-size: 12px;
+.main__section-carousel .carousel__list .carousel__item .carousel__container .carousel__description {
+  font-size: 14px;
+}
+.main__section-carousel .carousel__list .carousel__item .carousel__container .know-more__container {
+  width: 90%;
+  display: flex;
+  gap: 5px;
+}
+.main__section-carousel .carousel__list .carousel__item .carousel__container .know-more__container .know-more__title {
+  font-size: 15px;
   font-weight: 400;
   text-transform: uppercase;
+  padding: 8px 15px;
+  border: 1px solid #ffffff;
+  border-radius: 31px;
+  font-family: "Brown";
+  color: #ffffff;
+}
+.main__section-carousel .carousel__list .carousel__item .carousel__container .know-more__container .know-more__figure {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 13px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+.main__section-carousel .carousel__list .carousel__item .carousel__container .know-more__container .know-more__figure .know-more__image {
+  filter: invert(100%);
+}
+.main__section-carousel .carousel__our-projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0;
+  gap: 7px;
+  font-family: "Brown";
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  color: #ffffff;
+}
+@media (min-width: 760px) {
+  .main__section-carousel {
+    margin-top: 445px;
+    padding: 0;
+  }
+  .main__section-carousel .carousel__list {
+    height: 600px;
+  }
+  .main__section-carousel .carousel__list .carousel__item {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .main__section-carousel .carousel__list .carousel__item .carousel__image {
+    width: 50%;
+    height: 600px;
+  }
+  .main__section-carousel .carousel__list .carousel__item .carousel__container {
+    padding: 80px;
+  }
+  .main__section-carousel .carousel__list .carousel__item .carousel__container .carousel__subtitle {
+    width: 280px;
+    font-size: 30px;
+  }
+}
+@media (min-width: 1000px) {
+  .main__section-carousel {
+    margin-top: 545px;
+  }
 }
 
 .main__section-how-it-works {
@@ -333,30 +709,160 @@ body {
     transform: rotate(360deg);
   }
 }
-.main__section-how-it-works .section__image {
+.main__section-how-it-works .how-it-works__image {
   width: 90%;
   height: 270px;
   margin-top: 20px;
   border-right: 50px solid #00a39a;
   object-fit: cover;
 }
-
-.main__our-values {
-  border-bottom: 1px solid #000000;
+.main__section-how-it-works .how-it-works__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  margin: 20px 0;
+  gap: 20px;
 }
-.main__our-values .our-values__container {
+.main__section-how-it-works .how-it-works__container .how-it-works__title {
+  font-family: "Brown";
+  letter-spacing: 3px;
+}
+.main__section-how-it-works .how-it-works__container .how-it-works__subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "AirbnbCereal_W_Bd";
+  color: #00a39a;
+}
+.main__section-how-it-works .how-it-works__container .how-it-works__description {
+  font-size: 14px;
+}
+.main__section-how-it-works .how-it-works__container .know-more__container {
+  width: 90%;
+  display: flex;
+  gap: 5px;
+}
+.main__section-how-it-works .how-it-works__container .know-more__container .know-more__title {
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border: 1px solid #000000;
+  border-radius: 31px;
+  font-family: "Brown";
+}
+.main__section-how-it-works .how-it-works__container .know-more__container .know-more__figure {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 13px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+@media (min-width: 760px) {
+  .main__section-how-it-works {
+    max-height: 500px;
+    margin: 0;
+    padding: 70px;
+    flex-direction: row-reverse;
+    gap: 50px;
+  }
+  .main__section-how-it-works .how-it-works__circle {
+    width: 130px;
+    top: 12px;
+    left: -2px;
+    transition: 1s;
+  }
+  .main__section-how-it-works .how-it-works__figure {
+    position: relative;
+  }
+  .main__section-how-it-works .how-it-works__image {
+    width: 350px;
+    height: 360px;
+  }
+  .main__section-how-it-works .how-it-works__container {
+    width: 50%;
+    align-items: end;
+  }
+  .main__section-how-it-works .how-it-works__container .how-it-works__subtitle {
+    max-width: 365px;
+    text-align: end;
+  }
+  .main__section-how-it-works .how-it-works__container .how-it-works__title {
+    text-align: end;
+  }
+  .main__section-how-it-works .how-it-works__container .how-it-works__description {
+    text-align: end;
+  }
+  .main__section-how-it-works .know-more__container {
+    justify-content: end;
+  }
+}
+@media (min-width: 850px) {
+  .main__section-how-it-works .how-it-works__image {
+    min-width: 435px;
+    max-width: 435px;
+    height: 360px;
+  }
+}
+@media (min-width: 1000px) {
+  .main__section-how-it-works {
+    padding: 50px 55px;
+  }
+  .main__section-how-it-works .how-it-works__circle {
+    width: 180px;
+    top: 15px;
+    left: 20px;
+  }
+  .main__section-how-it-works .how-it-works__container {
+    max-width: 455px;
+  }
+  .main__section-how-it-works .how-it-works__container .how-it-works__subtitle {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1050px) {
+  .main__section-how-it-works {
+    padding: 50px 55px 0;
+  }
+}
+
+@media (min-width: 1050px) {
+  .square {
+    display: flex;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    background-color: #00a39a;
+    border: 0.6px solid #000000;
+  }
+}
+.main__section-our-values {
+  max-width: 1350px;
+  border-bottom: 1px solid #000000;
+  margin: 0 auto;
+}
+.main__section-our-values .our-values__container {
   padding: 20px;
   border: 1px solid #000000;
   background-color: #00a39a;
+  height: 450px;
 }
-.main__our-values .our-values__container .our-values__communication-and-responsibility {
+.main__section-our-values .our-values__container .our-values__communication-and-responsibility {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px 40px;
   gap: 20px;
   padding: 20px;
   border: 1px solid #ffffff;
 }
-.main__our-values .our-values__container .our-values__communication-and-responsibility .our-values__communication {
+.main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__communication {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -364,46 +870,125 @@ body {
   width: 60%;
   gap: 10px;
 }
-.main__our-values .our-values__container .our-values__communication-and-responsibility .our-values__communication .our-values__image {
+.main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__communication .our-values__image {
   width: 20px;
   height: 20px;
 }
-.main__our-values .our-values__container .our-values__communication-and-responsibility .our-values__communication .our-values__title {
-  font-size: 15px;
+.main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__communication .our-values__title {
+  font-size: 18px;
   font-weight: 700;
   color: #ffffff;
 }
-.main__our-values .our-values__container .our-values__communication-and-responsibility .our-values__communication .our-values__description {
-  font-size: 13px;
+.main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__communication .our-values__description {
+  max-width: 270px;
+  font-size: 14px;
   color: #ffffff;
 }
-.main__our-values .our-values__container .our-values__communication-and-responsibility .our-values__responsibility {
+.main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__responsibility {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 80%;
   margin-left: auto;
+  padding-left: 50px;
   gap: 10px;
 }
-.main__our-values .our-values__container .our-values__communication-and-responsibility .our-values__responsibility .our-values__image {
+.main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__responsibility .our-values__image {
   width: 20px;
   height: 20px;
 }
-.main__our-values .our-values__container .our-values__communication-and-responsibility .our-values__responsibility .our-values__title {
-  font-size: 15px;
+.main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__responsibility .our-values__title {
+  font-size: 18px;
   font-weight: 700;
   color: #ffffff;
 }
-.main__our-values .our-values__container .our-values__communication-and-responsibility .our-values__responsibility .our-values__description {
-  font-size: 13px;
+.main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__responsibility .our-values__description {
+  max-width: 252px;
+  font-size: 14px;
   color: #ffffff;
 }
-.main__our-values .article__container-description {
-  padding: 20px 0 20px 15px;
+.main__section-our-values .our-values__article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  padding: 40px 0 40px 15px;
+  gap: 20px;
 }
-.main__our-values .article__container-description .article__subtitle {
+.main__section-our-values .our-values__article .our-values__title {
+  font-family: "Brown";
+  letter-spacing: 3px;
+}
+.main__section-our-values .our-values__article .our-values__subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "AirbnbCereal_W_Bd";
   color: #000000;
+}
+.main__section-our-values .our-values__article .our-values__description {
+  font-size: 14px;
+}
+@media (min-width: 570px) {
+  .main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__responsibility {
+    padding-right: 50px;
+  }
+}
+@media (min-width: 760px) {
+  .main__section-our-values {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 400px;
+    gap: 50px;
+    transition: 1s;
+  }
+  .main__section-our-values .our-values__container {
+    width: 49.5%;
+    max-width: 639px;
+    height: 100%;
+  }
+  .main__section-our-values .our-values__container .our-values__communication-and-responsibility {
+    height: 100%;
+    justify-content: center;
+  }
+  .main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__communication {
+    width: 100%;
+  }
+  .main__section-our-values .our-values__article {
+    width: 50.5%;
+    max-width: 550px;
+    padding-right: 60px;
+  }
+  .main__section-our-values .our-values__article .our-values__subtitle {
+    max-width: 332px;
+    font-size: 30px;
+  }
+}
+@media (min-width: 1050px) {
+  .main__section-our-values {
+    height: 500px;
+  }
+  .main__section-our-values .our-values__container {
+    padding: 40px;
+    transition: 1s;
+  }
+  .main__section-our-values .our-values__container .our-values__communication-and-responsibility .our-values__communication {
+    padding-left: 50px;
+  }
+  .main__section-our-values .our-values__article {
+    gap: 35px;
+  }
+}
+@media (min-width: 1130px) {
+  .main__section-our-values .our-values__container {
+    width: 47.4%;
+  }
+  .main__section-our-values .our-values__article {
+    width: 52.6%;
+  }
 }
 
 .main__section-news {
@@ -412,25 +997,29 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 .main__section-news .news__text {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 25px 15px;
+  padding: 25px 15px 45px;
   gap: 25px;
 }
 .main__section-news .news__text .news__title {
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
+  font-family: "Brown";
+  letter-spacing: 3px;
 }
 .main__section-news .news__text .news__subtitle {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
   text-transform: uppercase;
+  max-width: 280px;
+  font-family: "AirbnbCereal_W_Bd";
 }
 .main__section-news .news__list {
   display: flex;
@@ -444,13 +1033,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 15px;
 }
 .main__section-news .news__list .news__item .news__container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 90%;
+  width: 100%;
   padding: 20px;
   gap: 25px;
   border: 0.6px solid #000000;
@@ -460,9 +1050,8 @@ body {
   font-style: italic;
 }
 .main__section-news .news__list .news__item .news__button {
-  width: 90%;
+  width: 100%;
   padding: 16px 15px;
-  gap: 7px;
   text-align: left;
   color: #ffffff;
   background-color: #00a39a;
@@ -470,102 +1059,305 @@ body {
 .main__section-news .news__list .news__item .news__button .news__arrow {
   padding-left: 7px;
 }
+@media (min-width: 760px) {
+  .main__section-news {
+    padding: 50px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  .main__section-news .news__text .news__subtitle {
+    max-width: 280px;
+    font-size: 30px;
+  }
+  .main__section-news .news__list {
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  .main__section-news .news__list .news__item {
+    padding: 0;
+  }
+  .main__section-news .news__list .news__item .news__container {
+    width: 260px;
+  }
+  .main__section-news .news__list .news__item .news__container .news__image {
+    max-width: 150px;
+    height: 28px;
+  }
+}
 
-.section__container-video {
-  width: 100vw;
-  margin-top: 50px;
-  position: relative;
-  background: rgba(54, 62, 30, 0.35);
-  mix-blend-mode: normal;
-  z-index: 2;
+.main__section-form {
+  width: 100%;
+  background-color: #000000;
 }
-.section__container-video .video__background {
-  width: 100vw;
-  height: 387.56px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-.section__container-video .video__background .video__image {
-  width: 100vw;
-  height: 387.56px;
-  object-fit: cover;
-}
-.section__container-video .video__text {
+.main__section-form .form__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 387.56px;
-  gap: 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(54, 62, 30, 0.35);
+  width: 100%;
+  padding: 50px 15px;
+  gap: 25px;
 }
-.section__container-video .video__text .video__play {
-  border: none;
-  background: none;
+.main__section-form .form__container .form__decoration {
+  display: none;
 }
-.section__container-video .video__text .video__title {
-  width: 67%;
+.main__section-form .form__container .form__title {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Brown";
+  letter-spacing: 3px;
+  color: #ffffff;
+}
+.main__section-form .form__container .form__subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "AirbnbCereal_W_Bd";
   text-align: center;
   color: #ffffff;
 }
-.section__container-video .video__text .video__subtitle {
+.main__section-form .form__container .form__description {
+  text-align: center;
   color: #ffffff;
 }
+.main__section-form .form__container .form__span {
+  color: #00a39a;
+}
+.main__section-form .form__container .form__contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+.main__section-form .form__container .form__contacts .contacts__input {
+  width: 100%;
+  padding: 14px 0 14px 15px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+}
+.main__section-form .form__container .form__contacts .contacts__input::placeholder {
+  color: #ffffff;
+}
+.main__section-form .form__container .form__textarea {
+  width: 100%;
+  padding: 14px 0 14px 15px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+}
+.main__section-form .form__container .form__textarea::placeholder {
+  color: #ffffff;
+}
+.main__section-form .form__container .form__button {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 250px;
+  margin-left: auto;
+  padding: 13px;
+  border: 1px solid #00a39a;
+  color: #ffffff;
+  background-color: #00a39a;
+  cursor: pointer;
+}
+@media (min-width: 760px) {
+  .main__section-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .main__section-form .form__container {
+    width: 84%;
+  }
+  .main__section-form .form__container .form__decoration {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    left: 0;
+  }
+  .main__section-form .form__container .form__contacts {
+    width: 100%;
+    flex-direction: row;
+  }
+  .main__section-form .form__container .form__subtitle {
+    max-width: 300px;
+    font-size: 30px;
+  }
+  .main__section-form .form__container .form__description {
+    max-width: 500px;
+  }
+  .main__section-form .form__container .form__textarea {
+    width: 100%;
+  }
+}
 
-.main__section-carousel {
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.footer__container .footer__baseboard {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  margin-top: 193px;
-  padding-top: 40px;
-  background-color: #00a39a;
-}
-.main__section-carousel .carousel__container {
-  width: 100%;
-}
-.main__section-carousel .carousel__container .carousel__item .carousel__image {
-  width: 100vw;
-  height: 350px;
-  object-fit: cover;
-}
-.main__section-carousel .carousel__container .carousel__item .article__container-description {
+  align-items: flex-start;
   width: 90%;
-  padding-left: 15px;
 }
-.main__section-carousel .carousel__container .carousel__item .article__container-description .article__subtitle {
-  color: #000000;
+.footer__container .footer__baseboard .footer__information {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px 0;
+  gap: 30px;
+  border-bottom: 0.6px solid #000000;
 }
-.main__section-carousel .carousel__container .carousel__item .article__container-description .article__span {
-  color: #ffffff;
+.footer__container .footer__baseboard .footer__information .information__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 13px;
 }
-.main__section-carousel .carousel__container .carousel__item .article__container-description .know-more__container .know-more__title {
-  border: 1px solid #ffffff;
-  color: #ffffff;
+.footer__container .footer__baseboard .footer__information .information__menu .information__item-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
-.main__section-carousel .carousel__container .carousel__item .article__container-description .know-more__container .know-more__figure {
-  filter: invert(100%);
+.footer__container .footer__baseboard .footer__information .information__menu .information__item {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
-.main__section-carousel .carousel__our-projects {
+.footer__container .footer__baseboard .footer__news-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 560px;
+  padding: 40px 0;
+  gap: 16px;
+}
+.footer__container .footer__baseboard .footer__news-form .news-form__title {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "AirbnbCereal_W_Bd";
+  color: #00a39a;
+}
+.footer__container .footer__baseboard .footer__news-form .news-form__input {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-bottom: 0.6px solid #000000;
+  background-color: transparent;
+  outline: none;
+}
+.footer__container .footer__baseboard .footer__news-form .news-form__checkbox {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 6px;
+}
+.footer__container .footer__baseboard .footer__news-form .news-form__checkbox .checkbox__label {
+  font-size: 13px;
+}
+.footer__container .footer__baseboard .footer__news-form .news-form__checkbox .checkbox__span {
+  text-decoration: underline;
+}
+.footer__container .footer__baseboard .footer__news-form .news-form__button {
   width: 100%;
-  padding: 30px 0;
+  padding: 13px;
+  border: 0.6px solid #000000;
+  font-family: "Brown";
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.footer__container .footer__baseboard .footer__back {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 13px 0 30px;
+  border: none;
+  font-family: "Brown";
+  background-color: transparent;
+}
+.footer__container .footer__baseboard .footer__back .back__start {
+  color: #000000;
+}
+.footer__container .footer__baseboard .footer__back .back__image {
+  padding-left: 7px;
+}
+.footer__container .footer__copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 15px;
   gap: 7px;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  color: #ffffff;
+  border-top: 0.6px solid #000000;
+}
+.footer__container .footer__copyright .copyright__description {
+  font-family: "Brown";
+  font-size: 10px;
+  font-weight: 400;
+}
+.footer__container .footer__copyright .copyright__developed {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Brown";
+  gap: 7px;
+}
+@media (min-width: 760px) {
+  .footer__container .footer__baseboard {
+    flex-direction: row;
+  }
+  .footer__container .footer__baseboard .footer__information {
+    height: 463px;
+    padding: 70px 30px 70px 0;
+    flex-direction: row;
+    gap: 50px;
+    border-bottom: none;
+    border-right: 0.6px solid #000000;
+  }
+  .footer__container .footer__baseboard .footer__information .information__menu {
+    max-width: 412px;
+  }
+  .footer__container .footer__baseboard .footer__information .information__menu .information__item {
+    min-width: 120px;
+    max-width: 435px;
+  }
+  .footer__container .footer__baseboard .footer__information .fao {
+    min-width: 154px;
+  }
+  .footer__container .footer__baseboard .footer__news-form {
+    max-width: 400px;
+    padding: 70px 50px;
+  }
+  .footer__container .footer__baseboard .footer__news-form .news-form__title {
+    max-width: 280px;
+    font-size: 24px;
+  }
+  .footer__container .footer__baseboard .footer__back {
+    padding: 70px 0;
+  }
+  .footer__container .footer__copyright {
+    padding: 20px 50px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
