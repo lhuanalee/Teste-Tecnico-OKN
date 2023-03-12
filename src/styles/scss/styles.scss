@@ -1,15 +1,25 @@
-@import "reset";
+@import "helpers/variables";
 
-@import "mixins";
+@import "helpers/reset";
 
-@import "variables";
+@import "helpers/mixins";
 
 @import "header/header";
 
-@import "main/articles";
+@import "main/intro";
+
+@import "main/description";
 
 @import "main/video";
 
 @import "main/carousel";
+
+@import "main/works";
+
+@import "main/values";
+
+@import "main/news";
+
+@import "main/form";
 
 @import "footer/footer";
