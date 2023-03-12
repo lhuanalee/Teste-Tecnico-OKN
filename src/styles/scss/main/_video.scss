@@ -1,66 +1,171 @@
-.section__container-video {
-  width: 100vw;
+.main__section-video {
+  @include flex-box(flex, column, center, center);
+
+  width: 100%;
 
   margin-top: 50px;
 
-  position: relative;
+  .video__container {
+    @include flex-box(flex, row, center, flex-start);
+    min-width: 50%;
 
-  background: rgba(54, 62, 30, 0.35);
+    gap: 10px;
 
-  mix-blend-mode: normal;
+    .video__join-us {
+      @include flex-box(flex, column, space-between, flex-start);
 
-  z-index: 2;
+      min-width: 222px;
 
-  .video__background {
-    width: 100vw;
-    height: 387.56px;
+      gap: 16px;
 
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
+      .video__title {
+        @include title(25px, 700);
 
-    .video__image {
-      width: 100vw;
+        font-family: "AirbnbCereal_W_Bd";
 
-      height: 387.56px;
+        max-width: 285px;
+      }
 
-      object-fit: cover;
+      .video__span {
+        font-family: "AirbnbCereal_W_Bd";
+
+        color: $color-primary;
+      }
+
+      .know-more__container {
+        width: 90%;
+
+        display: flex;
+
+        gap: 5px;
+
+        .know-more__title {
+          @include title(15px, 400);
+
+          padding: 8px 7px;
+
+          border: 1px solid $black;
+          border-radius: 31px;
+
+          font-family: "Brown";
+        }
+
+        .know-more__figure {
+          @include flex-box(flex, row, center, center);
+
+          padding: 6px 13px;
+
+          border: 1px solid $black;
+          border-radius: 50%;
+        }
+      }
     }
   }
 
-  .video__text {
-    @include flex-box(flex, column, center, center);
+  .video__container-background {
+    width: 100vw;
 
-    height: 387.56px;
+    margin-top: 50px;
 
-    gap: 20px;
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
+    position: relative;
 
     background: rgba(54, 62, 30, 0.35);
 
-    .video__play {
-      border: none;
+    mix-blend-mode: normal;
 
-      background: none;
+    z-index: 2;
+
+    .video__background {
+      width: 100vw;
+      height: 387.56px;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+
+      .video__image {
+        width: 100vw;
+
+        height: 387.56px;
+
+        object-fit: cover;
+      }
     }
 
-    .video__title {
-      width: 67%;
+    .video__text {
+      @include flex-box(flex, column, center, center);
 
-      text-align: center;
+      height: 387.56px;
 
-      color: $white;
+      gap: 20px;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+
+      background: rgba(54, 62, 30, 0.35);
+
+      .video__play {
+        border: none;
+
+        background: none;
+      }
+
+      .video__title {
+        width: 67%;
+
+        text-align: center;
+
+        color: $white;
+      }
+
+      .video__subtitle {
+        color: $white;
+      }
+    }
+  }
+
+  @media (min-width: 760px) {
+    .video__container {
+      .video__join-us {
+        .video__title {
+          font-size: $title-size-1;
+        }
+      }
     }
 
-    .video__subtitle {
-      color: $white;
+    .video__container-background {
+      .video__background {
+        height: 600px;
+
+        .video__image {
+          height: 600px;
+        }
+      }
+
+      .video__text {
+        height: 600px;
+      }
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .video__container-background {
+      .video__background {
+        height: 700px;
+
+        .video__image {
+          height: 700px;
+        }
+      }
+
+      .video__text {
+        height: 700px;
+      }
     }
   }
 }

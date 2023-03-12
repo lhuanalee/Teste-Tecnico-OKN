@@ -1,0 +1,115 @@
+.main__section-news {
+  @include flex-box(flex, column, flex-start, flex-start);
+
+  width: 100%;
+
+  padding: 20px 0;
+
+  .news__text {
+    @include flex-box(flex, column, flex-start, flex-start);
+
+    padding: 25px 15px 45px;
+
+    gap: 25px;
+
+    .news__title {
+      @include title(16px, 400);
+
+      font-family: "Brown";
+
+      letter-spacing: 3px;
+    }
+
+    .news__subtitle {
+      @include title(25px, 700);
+
+      max-width: 280px;
+
+      font-family: "AirbnbCereal_W_Bd";
+    }
+  }
+
+  .news__list {
+    @include flex-box(flex, column, center, center);
+
+    gap: 20px;
+
+    .news__item {
+      @include flex-box(flex, column, center, center);
+
+      padding: 0 15px;
+
+      .news__container {
+        @include flex-box(flex, column, flex-start, flex-start);
+
+        width: 100%;
+
+        padding: 20px;
+
+        gap: 25px;
+
+        border: 0.6px solid $black;
+
+        .news__date {
+          font-size: $text-size-2;
+
+          font-style: italic;
+        }
+      }
+
+      .news__button {
+        width: 100%;
+
+        padding: 16px 15px;
+
+        text-align: left;
+
+        color: $white;
+
+        background-color: $color-primary;
+
+        .news__arrow {
+          padding-left: 7px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 760px) {
+    padding: 50px;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+
+    .news__text {
+      .news__subtitle {
+        max-width: 280px;
+
+        font-size: $title-size-1;
+      }
+    }
+
+    .news__list {
+      flex-direction: row;
+      justify-content: flex-start;
+
+      overflow-x: auto;
+
+      .news__item {
+        padding: 0;
+
+        .news__container {
+          width: 260px;
+
+          .news__image {
+            max-width: 150px;
+            height: 28px;
+          }
+        }
+      }
+    }
+  }
+}

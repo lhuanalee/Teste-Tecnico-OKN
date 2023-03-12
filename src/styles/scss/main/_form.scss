@@ -1,0 +1,143 @@
+.main__section-form {
+  width: 100%;
+
+  background-color: $black;
+
+  .form__container {
+    @include flex-box(flex, column, center, center);
+
+    width: 100%;
+
+    padding: 50px 15px;
+
+    gap: 25px;
+
+    .form__decoration {
+      display: none;
+    }
+
+    .form__title {
+      @include title(16px, 400);
+
+      font-family: "Brown";
+
+      letter-spacing: 3px;
+
+      color: $white;
+    }
+
+    .form__subtitle {
+      @include title(20px, 700);
+
+      font-family: "AirbnbCereal_W_Bd";
+
+      text-align: center;
+
+      color: $white;
+    }
+
+    .form__description {
+      text-align: center;
+
+      color: $white;
+    }
+
+    .form__span {
+      color: $color-primary;
+    }
+
+    .form__contacts {
+      @include flex-box(flex, column, center, center);
+
+      width: 100%;
+
+      gap: 20px;
+
+      .contacts__input {
+        width: 100%;
+
+        padding: 14px 0 14px 15px;
+
+        border: 1px solid $white;
+
+        background-color: transparent;
+
+        &::placeholder {
+          color: $white;
+        }
+      }
+    }
+
+    .form__textarea {
+      width: 100%;
+
+      padding: 14px 0 14px 15px;
+
+      border: 1px solid $white;
+
+      background-color: transparent;
+
+      &::placeholder {
+        color: $white;
+      }
+    }
+
+    .form__button {
+      @include title(16px, 600);
+
+      width: 250px;
+
+      margin-left: auto;
+
+      padding: 13px;
+
+      border: 1px solid $color-primary;
+
+      color: $white;
+
+      background-color: $color-primary;
+
+      cursor: pointer;
+    }
+  }
+
+  @media (min-width: 760px) {
+    @include flex-box(flex, column, center, center);
+
+    position: relative;
+
+    .form__container {
+      width: 84%;
+
+      .form__decoration {
+        display: flex;
+
+        position: absolute;
+        top: 70px;
+        left: 0;
+      }
+
+      .form__contacts {
+        width: 100%;
+        flex-direction: row;
+      }
+
+      .form__subtitle {
+        max-width: 300px;
+
+        font-size: $title-size-1;
+      }
+
+      .form__description {
+        max-width: 500px;
+      }
+
+      .form__textarea {
+        width: 100%;
+      }
+
+      .form__button {
+      }
+    }
+  }
+}

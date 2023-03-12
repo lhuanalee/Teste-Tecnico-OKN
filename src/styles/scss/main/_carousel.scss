@@ -9,10 +9,12 @@
 
   background-color: $color-primary;
 
-  .carousel__container {
+  .carousel__list {
     width: 100%;
 
     .carousel__item {
+      width: 100%;
+
       .carousel__image {
         width: 100vw;
         height: 350px;
@@ -20,27 +22,70 @@
         object-fit: cover;
       }
 
-      .article__container-description {
+      .carousel__container {
+        @include flex-box(flex, column, center, flex-start);
+
         width: 90%;
 
-        padding-left: 15px;
+        padding: 20px;
 
-        .article__subtitle {
+        gap: 20px;
+
+        .carousel__title {
+          font-family: "Brown";
+
+          letter-spacing: 3px;
+
           color: $black;
         }
 
-        .article__span {
+        .carousel__subtitle {
+          @include title(20px, 700);
+
+          font-family: "AirbnbCereal_W_Bd";
+
+          color: $black;
+        }
+
+        .carousel__span {
           color: $white;
         }
 
+        .carousel__description {
+          font-size: $text-size-1;
+        }
+
         .know-more__container {
+          width: 90%;
+
+          display: flex;
+
+          gap: 5px;
+
           .know-more__title {
+            @include title(15px, 400);
+
+            padding: 8px 15px;
+
             border: 1px solid $white;
+            border-radius: 31px;
+
+            font-family: "Brown";
+
             color: $white;
           }
 
           .know-more__figure {
-            filter: invert(100%);
+            @include flex-box(flex, row, center, center);
+
+            padding: 6px 13px;
+
+            border: 1px solid $white;
+            border-radius: 50%;
+
+            .know-more__image {
+              filter: invert(100%);
+            }
           }
         }
       }
@@ -56,10 +101,45 @@
 
     gap: 7px;
 
+    font-family: "Brown";
+
     border-top: 1px solid $black;
 
     border-bottom: 1px solid $black;
 
     color: $white;
+  }
+
+  @media (min-width: 760px) {
+    margin-top: 445px;
+    padding: 0;
+
+    .carousel__list {
+      height: 600px;
+
+      .carousel__item {
+        display: flex;
+        flex-direction: row-reverse;
+
+        .carousel__image {
+          width: 50%;
+          height: 600px;
+        }
+
+        .carousel__container {
+          padding: 80px;
+
+          .carousel__subtitle {
+            width: 280px;
+
+            font-size: $title-size-1;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1000px) {
+    margin-top: 545px;
   }
 }

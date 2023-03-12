@@ -1,0 +1,192 @@
+.main__section-how-it-works {
+  @include flex-box(flex, column, center, center);
+
+  width: 100%;
+
+  margin-top: 50px;
+
+  position: relative;
+
+  .how-it-works__circle {
+    animation: spin 12s infinite linear;
+
+    position: absolute;
+    top: -60px;
+    left: 0;
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .how-it-works__image {
+    width: 90%;
+    height: 270px;
+
+    margin-top: 20px;
+
+    border-right: 50px solid $color-primary;
+
+    object-fit: cover;
+  }
+
+  .how-it-works__container {
+    @include flex-box(flex, column, center, flex-start);
+
+    width: 90%;
+
+    margin: 20px 0;
+
+    gap: 20px;
+
+    .how-it-works__title {
+      font-family: "Brown";
+
+      letter-spacing: 3px;
+    }
+
+    .how-it-works__subtitle {
+      @include title(20px, 700);
+
+      font-family: "AirbnbCereal_W_Bd";
+
+      color: $color-primary;
+    }
+
+    .how-it-works__description {
+      font-size: $text-size-1;
+    }
+
+    .know-more__container {
+      width: 90%;
+
+      display: flex;
+
+      gap: 5px;
+
+      .know-more__title {
+        @include title(15px, 400);
+
+        padding: 8px 15px;
+
+        border: 1px solid $black;
+        border-radius: 31px;
+
+        font-family: "Brown";
+      }
+
+      .know-more__figure {
+        @include flex-box(flex, row, center, center);
+
+        padding: 6px 13px;
+
+        border: 1px solid $black;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  @media (min-width: 760px) {
+    max-height: 500px;
+
+    margin: 0;
+    padding: 70px;
+
+    flex-direction: row-reverse;
+
+    gap: 50px;
+
+    .how-it-works__circle {
+      width: 130px;
+
+      top: 12px;
+      left: -2px;
+
+      transition: 1s;
+    }
+
+    .how-it-works__figure {
+      position: relative;
+    }
+
+    .how-it-works__image {
+      width: 350px;
+
+      height: 360px;
+    }
+
+    .how-it-works__container {
+      width: 50%;
+
+      align-items: end;
+
+      .how-it-works__subtitle {
+        max-width: 365px;
+
+        text-align: end;
+      }
+
+      .how-it-works__title {
+        text-align: end;
+      }
+
+      .how-it-works__description {
+        text-align: end;
+      }
+    }
+
+    .know-more__container {
+      justify-content: end;
+    }
+  }
+
+  @media (min-width: 850px) {
+    .how-it-works__image {
+      min-width: 435px;
+      max-width: 435px;
+      height: 360px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    padding: 50px 55px;
+
+    .how-it-works__circle {
+      width: 180px;
+
+      top: 15px;
+      left: 20px;
+    }
+
+    .how-it-works__container {
+      max-width: 455px;
+
+      .how-it-works__subtitle {
+        font-size: $title-size-1;
+      }
+    }
+  }
+
+  @media (min-width: 1050px) {
+    padding: 50px 55px 0;
+  }
+}
+
+@media (min-width: 1050px) {
+  .square {
+    display: flex;
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto;
+
+    background-color: $color-primary;
+    border: 0.6px solid $black;
+  }
+}

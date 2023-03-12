@@ -1,0 +1,128 @@
+.main__section-description {
+  @include flex-box(flex, column, center, center);
+
+  width: 100%;
+
+  padding-bottom: 20px;
+
+  border-bottom: 0.6px solid $black;
+
+  .description__image {
+    width: 90%;
+    height: 270px;
+
+    margin-top: 20px;
+
+    border-left: 50px solid $color-primary;
+
+    object-fit: cover;
+
+    object-position: center;
+  }
+
+  .description__container {
+    @include flex-box(flex, column, center, flex-start);
+
+    width: 90%;
+
+    margin: 20px 0;
+
+    gap: 20px;
+
+    .description__decoration {
+      display: none;
+    }
+
+    .description__title {
+      font-family: "Brown";
+
+      letter-spacing: 3px;
+    }
+
+    .description__subtitle {
+      @include title(25px, 700);
+
+      font-family: "AirbnbCereal_W_Bd";
+
+      color: $color-primary;
+    }
+
+    .description__text {
+      font-size: $text-size-1;
+    }
+
+    .know-more__container {
+      width: 90%;
+
+      display: flex;
+
+      gap: 5px;
+
+      .know-more__title {
+        @include title(15px, 400);
+
+        padding: 8px 15px;
+
+        border: 1px solid $black;
+        border-radius: 31px;
+
+        font-family: "Brown";
+      }
+
+      .know-more__figure {
+        @include flex-box(flex, row, center, center);
+
+        padding: 6px 13px;
+
+        border: 1px solid $black;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  @media (min-width: 760px) {
+    padding: 80px 0;
+
+    flex-direction: row;
+
+    gap: 10px;
+
+    position: relative;
+
+    .description__image {
+      width: 40%;
+      height: 380px;
+
+      margin: 0 15px;
+    }
+
+    .description__container {
+      max-width: 560px;
+      height: 350px;
+
+      margin: 0 20px;
+
+      justify-content: space-between;
+
+      gap: 11px;
+
+      .description__subtitle {
+        width: 332px;
+
+        font-size: $title-size-1;
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    .description__container {
+      .description__decoration {
+        display: flex;
+
+        position: absolute;
+        top: 80px;
+        right: 0;
+      }
+    }
+  }
+}

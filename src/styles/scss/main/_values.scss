@@ -1,0 +1,194 @@
+.main__section-our-values {
+  max-width: 1350px;
+
+  border-bottom: 1px solid $black;
+
+  margin: 0 auto;
+
+  .our-values__container {
+    padding: 20px;
+
+    border: 1px solid $black;
+
+    background-color: $color-primary;
+
+    height: 450px;
+
+    .our-values__communication-and-responsibility {
+      @include flex-box(flex, column, center, center);
+
+      height: 100%;
+
+      padding: 20px 40px;
+
+      gap: 20px;
+
+      padding: 20px;
+
+      border: 1px solid $white;
+
+      .our-values__communication {
+        @include flex-box(flex, column, flex-start, flex-start);
+
+        width: 60%;
+
+        gap: 10px;
+
+        .our-values__image {
+          width: 20px;
+          height: 20px;
+        }
+
+        .our-values__title {
+          font-size: $title-size-2;
+          font-weight: $title-weight-1;
+
+          color: $white;
+        }
+
+        .our-values__description {
+          max-width: 270px;
+
+          font-size: $text-size-1;
+          color: $white;
+        }
+      }
+
+      .our-values__responsibility {
+        @include flex-box(flex, column, flex-start, flex-start);
+
+        margin-left: auto;
+
+        padding-left: 50px;
+
+        gap: 10px;
+
+        .our-values__image {
+          width: 20px;
+          height: 20px;
+        }
+
+        .our-values__title {
+          font-size: $title-size-2;
+          font-weight: $title-weight-1;
+
+          color: $white;
+        }
+
+        .our-values__description {
+          max-width: 252px;
+
+          font-size: $text-size-1;
+
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .our-values__article {
+    @include flex-box(flex, column, flex-start, flex-start);
+
+    width: 90%;
+
+    padding: 40px 0 40px 15px;
+
+    gap: 20px;
+
+    .our-values__title {
+      font-family: "Brown";
+
+      letter-spacing: 3px;
+    }
+
+    .our-values__subtitle {
+      @include title(20px, 700);
+
+      font-family: "AirbnbCereal_W_Bd";
+
+      color: $black;
+    }
+
+    .our-values__description {
+      font-size: $text-size-1;
+    }
+  }
+
+  @media (min-width: 570px) {
+    .our-values__container {
+      .our-values__communication-and-responsibility {
+        .our-values__responsibility {
+          padding-right: 50px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 760px) {
+    @include flex-box(flex, row, flex-start, center);
+
+    height: 400px;
+
+    gap: 50px;
+
+    transition: 1s;
+
+    .our-values__container {
+      width: 49.5%;
+      max-width: 639px;
+      height: 100%;
+
+      .our-values__communication-and-responsibility {
+        height: 100%;
+
+        justify-content: center;
+
+        .our-values__communication {
+          width: 100%;
+        }
+      }
+    }
+
+    .our-values__article {
+      width: 50.5%;
+      max-width: 550px;
+
+      padding-right: 60px;
+
+      .our-values__subtitle {
+        max-width: 332px;
+
+        font-size: $title-size-1;
+      }
+    }
+  }
+
+  @media (min-width: 1050px) {
+    height: 500px;
+
+    .our-values__container {
+      padding: 40px;
+      transition: 1s;
+
+      .our-values__communication-and-responsibility {
+        .our-values__communication {
+          padding-left: 50px;
+        }
+      }
+    }
+
+    .our-values__article {
+      gap: 35px;
+    }
+  }
+
+  @media (min-width: 1130px) {
+    .our-values__container {
+      width: 47.4%;
+    }
+
+    .our-values__article {
+      width: 52.6%;
+    }
+  }
+}
