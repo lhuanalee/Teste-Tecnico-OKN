@@ -4,8 +4,9 @@
   width: 100%;
 
   margin-top: 193px;
-
   padding-top: 40px;
+
+  position: relative;
 
   background-color: $color-primary;
 
@@ -13,7 +14,16 @@
     width: 100%;
 
     .carousel__item {
+      display: none;
+    }
+
+    .carousel__item--visible {
       width: 100%;
+
+      display: flex;
+      flex-direction: column;
+
+      animation: fadeVisibility 0.3s;
 
       .carousel__image {
         width: 100vw;
@@ -89,6 +99,117 @@
           }
         }
       }
+
+      @keyframes fadeVisibility {
+        0% {
+          margin-left: 0;
+        }
+
+        100% {
+          margin-left: 100%;
+        }
+      }
+    }
+  }
+
+  .carousel__actions {
+    @include flex-box(flex, row, space-evenly, center);
+
+    width: 50%;
+    height: 38px;
+
+    position: absolute;
+    top: 324px;
+    right: 25%;
+
+    .actions__button--prev,
+    .actions__button--next {
+      @include flex-box(flex, row, center, center);
+
+      width: 35px;
+      height: 35px;
+
+      padding: 8px;
+
+      color: $color-primary;
+
+      border: 1px solid $color-primary;
+
+      background-color: transparent;
+
+      cursor: pointer;
+
+      .actions__arrow {
+        width: 18px;
+        height: 18px;
+      }
+
+      &:hover {
+        background-color: $color-primary;
+
+        transition: 1s;
+      }
+
+      &:hover .actions__arrow {
+        fill: $white;
+
+        transition: 1s;
+      }
+
+      &:focus {
+        color: $white;
+
+        background-color: $color-primary;
+
+        transition: 1s;
+      }
+
+      &:focus .actions__arrow {
+        fill: $white;
+
+        transition: 1s;
+      }
+    }
+
+    .actions__button--one,
+    .actions__button--two,
+    .actions__button--three {
+      @include title($title-size-2, 700);
+
+      padding: 8px 13px;
+
+      border: 1px solid $color-primary;
+      border-radius: 50%;
+
+      color: $color-primary;
+
+      background-color: transparent;
+
+      cursor: pointer;
+
+      &:hover {
+        color: $white;
+
+        background-color: $color-primary;
+
+        transition: 1s;
+      }
+
+      &:focus {
+        color: $white;
+
+        background-color: $color-primary;
+
+        transition: 1s;
+      }
+    }
+
+    .line {
+      width: 100%;
+
+      height: 0;
+
+      border: 0.6px solid #00a39a;
     }
   }
 
@@ -117,7 +238,7 @@
     .carousel__list {
       height: 600px;
 
-      .carousel__item {
+      .carousel__item--visible {
         display: flex;
         flex-direction: row-reverse;
 
@@ -136,6 +257,34 @@
           }
         }
       }
+    }
+
+    .carousel__actions {
+      width: 38px;
+      height: 50%;
+
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 10px;
+
+      position: absolute;
+      top: 20%;
+      right: 50px;
+
+      .actions__button--prev,
+      .actions__button--next {
+        .actions__arrow {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    .line {
+      height: 100%;
+
+      width: 0;
+
+      transform: rotate(90deg);
     }
   }
 

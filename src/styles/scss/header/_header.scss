@@ -192,10 +192,11 @@
         opacity: 0;
 
         .dropdown__list {
+          padding-top: 20px;
+
           display: flex;
           flex-direction: column;
           gap: 20px;
-          padding-top: 20px;
 
           .dropdown__item {
             padding-left: 30px;
@@ -235,14 +236,19 @@
 
         top: 100px;
 
+        border: 0.6px solid $black;
+
         text-align: center;
 
         background-color: $color-primary;
 
         transform: translateX(0%);
 
+        overflow: unset;
+
         .navigation__item {
           font-weight: 500;
+          height: 50px;
 
           position: relative;
 
@@ -256,6 +262,34 @@
 
           .dropdown__list {
             display: none;
+          }
+
+          &:hover {
+            color: $black;
+
+            transition: 1s;
+          }
+
+          &:hover .dropdown__list {
+            width: 100%;
+
+            display: flex;
+
+            padding-top: 0;
+
+            gap: 0;
+
+            position: absolute;
+            top: 50.5px;
+            left: 0;
+
+            color: $white;
+
+            background-color: $color-primary;
+
+            .dropdown__item {
+              padding: 15px 20px;
+            }
           }
         }
       }

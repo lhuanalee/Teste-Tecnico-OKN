@@ -3,11 +3,8 @@
 
   width: 100%;
 
-  //   position: sticky;
-  //   top: 0;
-
   .footer__baseboard {
-    @include flex-box(flex, column, flex-start, flex-start);
+    @include flex-box(flex, column, center, flex-start);
 
     width: 90%;
 

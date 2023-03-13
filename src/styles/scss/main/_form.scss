@@ -77,6 +77,8 @@
 
       background-color: transparent;
 
+      resize: none;
+
       &::placeholder {
         color: $white;
       }
