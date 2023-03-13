@@ -145,7 +145,7 @@
 
         <section class="main__section-carousel">
             <ul class="carousel__list">
-                <li class="carousel__item">
+                <li class="carousel__item carousel__item--visible">
                     <img class="carousel__image" src="./src/assets/images/Ecotourism.png" alt="Ecoturismo">
 
                     <article class="carousel__container">
@@ -166,7 +166,72 @@
                         </div>
                     </article>                    
                 </li>
+
+                <li class="carousel__item">
+                    <img class="carousel__image" src="./src/assets/images/Plant.png" alt="Ecoturismo">
+
+                    <article class="carousel__container">
+                        <p class="carousel__title">NOSSOS PROJETOS</p>
+        
+                        <h1 class="carousel__subtitle">PROJETO <span class="carousel__span">FORTALECIMENTO</span> DO FUNDO DA AMAZÔNIA ORIENTAL</h1>
+        
+                        <p class="carousel__description">O FAO é uma estratégia de financiamento ambiental pautada em colaborações privadas, em prol do fortalecimento das políticas públicas e das iniciativas sociais focadas em meio ambiente e desenvolvimento no Pará. Os programas e projetos apoiados visam a construção de novas iniciativas para a agenda climática do Pará, objetivando impactos para as comunidades, escalabilidade e compromisso com as metas globais.  Conheça os nossos programas e projetos e faça parte dessa estratégia.</p>
+        
+                        <p class="carousel__description">Conheça os nossos programas e projetos e faça parte dessa estratégia.</p>
+
+                        <div class="know-more__container">
+                            <p class="know-more__title">SAIBA MAIS</p>
+            
+                            <figure class="know-more__figure">
+                                <img class="know-more__image" src="./src/assets/images/Arrow.png" alt="Seta">
+                            </figure>
+                        </div>
+                    </article>                    
+                </li>
+
+                <li class="carousel__item">
+                    <img class="carousel__image" src="./src/assets/images/Seed.png" alt="Ecoturismo">
+
+                    <article class="carousel__container">
+                        <p class="carousel__title">NOSSOS PROJETOS</p>
+        
+                        <h1 class="carousel__subtitle">PROJETO <span class="carousel__span">TRANSFORMAÇÃO</span> DIGITAL, COMUNICAÇÃO E TRANSPARÊNCIA</h1>
+        
+                        <p class="carousel__description">Apoiar as ações de transformação digital da SEMAS e permitir o fortalecimento de ações voltadas à comunicação e transparência do FAO.</p>
+        
+                        <p class="carousel__description">Conheça os nossos programas e projetos e faça parte dessa estratégia.</p>
+
+                        <div class="know-more__container">
+                            <p class="know-more__title">SAIBA MAIS</p>
+            
+                            <figure class="know-more__figure">
+                                <img class="know-more__image" src="./src/assets/images/Arrow.png" alt="Seta">
+                            </figure>
+                        </div>
+                    </article>                    
+                </li>               
             </ul>
+
+
+            <div class="carousel__actions">
+                <button class="actions__button--prev" aria-label="Slide anterior"><svg class="actions__arrow" fill="#00a39a" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/></svg></button>
+
+                <div class="line"></div>
+
+                <button class="actions__button--one">1</button>
+
+                <div class="line"></div>
+
+                <button class="actions__button--two">2</button>
+
+                <div class="line"></div>
+
+                <button class="actions__button--three">3</button>
+
+                <div class="line"></div>
+
+                <button class="actions__button--next"><svg class="actions__arrow" fill="#00a39a" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero"/></svg></button>
+              </div>
 
             <div class="carousel__our-projects">
                 <p>VER TODOS OS PROJETOS</p>
@@ -307,7 +372,7 @@
     </main>
 
     <footer class="footer__container">
-        <div class="footer__baseboard">
+        <div class="footer__baseboard max-width">
             <div class="footer__information">
                 <ul class="information__menu fao">
                     <li class="information__item-title">FAO</li>
@@ -350,5 +415,6 @@
         </div>
     </footer>
     <script src="./src/js/navbar.js"></script>
+    <script src="./src/js/carousel.js"></script>
 </body>
 </html>
