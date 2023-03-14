@@ -1,51 +1,67 @@
-const slides = document.querySelectorAll(".carousel__item");
+class Carousel {
+  constructor(slides, prevButton, nextButton, slideOne, slideTwo, slideThree) {
+    this.slides = document.querySelectorAll(slides);
+    this.prevButton = document.querySelector(prevButton);
+    this.nextButton = document.querySelector(nextButton);
+    this.slideOne = document.querySelector(slideOne);
+    this.slideTwo = document.querySelector(slideTwo);
+    this.slideThree = document.querySelector(slideThree);
+    this.prevSlide = this.prevSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
+    this.currentSlideIndex = 0;
+  }
 
-const prevButton = document.querySelector(".actions__button--prev");
+  prevSlide() {
+    this.currentSlideIndex === 0
+      ? (this.currentSlideIndex = 2)
+      : this.currentSlideIndex--;
 
-const nextButton = document.querySelector(".actions__button--next");
+    this.slides.forEach((slide) => {
+      slide.classList.remove("carousel__item--visible");
+    });
 
-const slideOne = document.querySelector(".actions__button--one");
+    this.slides[this.currentSlideIndex].classList.add(
+      "carousel__item--visible"
+    );
+  }
 
-const slideTwo = document.querySelector(".actions__button--two");
+  nextSlide() {
+    this.currentSlideIndex === 2
+      ? (this.currentSlideIndex = 0)
+      : this.currentSlideIndex++;
 
-const slideThree = document.querySelector(".actions__button--three");
+    this.slides.forEach((slide) => {
+      slide.classList.remove("carousel__item--visible");
+    });
 
-let currentSlideIndex = 0;
+    this.slides[this.currentSlideIndex].classList.add(
+      "carousel__item--visible"
+    );
+  }
 
-nextButton.addEventListener("click", () => {
-  currentSlideIndex === 2 ? (currentSlideIndex = 0) : currentSlideIndex++;
+  currentSlide(index) {
+    this.slides.forEach((slide) => {
+      slide.classList.remove("carousel__item--visible");
+    });
+    this.slides[index].classList.add("carousel__item--visible");
+  }
 
-  slides.forEach((slide) => {
-    slide.classList.remove("carousel__item--visible");
-  });
+  addClickEvent() {
+    this.prevButton.addEventListener("click", this.prevSlide);
+    this.nextButton.addEventListener("click", this.nextSlide);
+    this.slideOne.addEventListener("click", () => this.currentSlide(0));
+    this.slideTwo.addEventListener("click", () => this.currentSlide(1));
+    this.slideThree.addEventListener("click", () => this.currentSlide(2));
+  }
+}
 
-  slides[currentSlideIndex].classList.add("carousel__item--visible");
-});
+const carousel = new Carousel(
+  ".carousel__item",
+  ".actions__button--prev",
+  ".actions__button--next",
+  ".actions__button--one",
+  ".actions__button--two",
+  ".actions__button--three"
+);
 
-prevButton.addEventListener("click", () => {
-  currentSlideIndex === 0 ? (currentSlideIndex = 2) : currentSlideIndex--;
-
-  slides.forEach((slide) => {
-    slide.classList.remove("carousel__item--visible");
-  });
-
-  slides[currentSlideIndex].classList.add("carousel__item--visible");
-});
-
-slideOne.addEventListener("click", () => {
-  slides[0].classList.add("carousel__item--visible");
-  slides[1].classList.remove("carousel__item--visible");
-  slides[2].classList.remove("carousel__item--visible");
-});
-
-slideTwo.addEventListener("click", () => {
-  slides[0].classList.remove("carousel__item--visible");
-  slides[1].classList.add("carousel__item--visible");
-  slides[2].classList.remove("carousel__item--visible");
-});
-
-slideThree.addEventListener("click", () => {
-  slides[0].classList.remove("carousel__item--visible");
-  slides[1].classList.remove("carousel__item--visible");
-  slides[2].classList.add("carousel__item--visible");
-});
+carousel.addClickEvent();

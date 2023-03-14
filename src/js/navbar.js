@@ -9,7 +9,6 @@ class NavBar {
 
   animateItem() {
     this.navItem.forEach((item, index) => {
-      console.log(index);
       item.style.animation
         ? (item.style.animation = "")
         : (item.style.animation = `navItemFade 0.5s ease forwards ${
@@ -36,10 +35,10 @@ class NavBar {
   }
 }
 
-const navbar = new NavBar(
+const navBar = new NavBar(
   ".header__menu",
   ".navigation__list",
   ".navigation__item"
 );
 
-navbar.init();
+navBar.init();
