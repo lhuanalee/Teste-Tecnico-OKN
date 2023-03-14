@@ -16,6 +16,8 @@
       width: 225px;
       height: 78px;
     }
+
+    cursor: pointer;
   }
 
   .header__infos {
@@ -40,14 +42,38 @@
         outline: none;
       }
 
-      .search__image {
-        padding: 10px;
+      .search__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: transparent;
+
+        border: none;
 
         border-left: 0.6px solid $black;
 
-        object-fit: cover;
-
         cursor: pointer;
+
+        &:hover {
+          background-color: $black;
+
+          transition: 1s;
+        }
+
+        .search__image {
+          padding: 7px;
+
+          background-color: transparent;
+
+          object-fit: cover;
+        }
+
+        &:hover .search__image {
+          filter: brightness(0%) invert(100%);
+
+          transition: 1s;
+        }
       }
     }
 
@@ -58,10 +84,6 @@
 
       gap: 10px;
 
-      img:hover {
-        filter: invert(100%);
-      }
-
       .contacts__facebook {
         padding: 9px 14px;
 
@@ -70,7 +92,11 @@
         cursor: pointer;
 
         &:hover {
+          filter: invert(100%);
+
           background-color: $white;
+
+          transition: 1s;
         }
       }
 
@@ -82,7 +108,11 @@
         cursor: pointer;
 
         &:hover {
+          filter: invert(100%);
+
           background-color: $white;
+
+          transition: 1s;
         }
       }
 
@@ -100,6 +130,8 @@
 
         &:hover {
           background-color: $black;
+
+          transition: 1s;
         }
       }
     }
