@@ -15,13 +15,13 @@
 <body>
     <header class="header__container">
         <figure class="header__figure">
-            <img class="header__logo" src="./src/assets/images/Logo.png" alt="Logo">
+            <a href="#"><img class="header__logo" src="./src/assets/images/Logo.png" alt="Logo"></a>
         </figure>
 
         <div class="header__infos">
             <div class="infos__search">
                 <input class="search__input" type="text" placeholder="FAÇA UMA BUSCA">
-                <img class="search__image" src="./src/assets/images/Magnifier.png" alt="Lupa">
+                <button class="search__button"><img class="search__image" src="./src/assets/images/Magnifier.png" alt="Lupa"></button>
             </div>
     
             <div class="infos__contacts">
@@ -80,17 +80,17 @@
                     <p class="know-more__title">SAIBA MAIS</p>
     
                     <figure class="know-more__figure">
-                        <img class="know-more__image" src="./src/assets/images/Arrow.png" alt="">
+                        <img class="know-more__image" src="./src/assets/images/Arrow.png" alt="Seta">
                     </figure>               
                 </div>
             </article> 
         </section>
 
         <section class="main__section-description">
-            <img class="description__image" src="./src/assets/images/Cultivation.png" alt="">
+            <img class="description__image" src="./src/assets/images/Cultivation.png" alt="Cultivo">
 
             <article class="description__container">
-                <img class="description__decoration" src="./src/assets/images/Decoration.png" alt="">
+                <img class="description__decoration" src="./src/assets/images/Decoration.png" alt="Pontilhado">
 
                 <p class="description__title">QUEM SOMOS</p>
 
@@ -128,17 +128,16 @@
             </div>
 
             <div class="video__container-background">
-                <iframe src="https://www.youtube.com/embed/5g8IyHvVBL8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <video class="video" src="./src/assets/images/Fundo da Amazônia Oriental.mp4" width="100%" controls></video>
 
                 <figure class="video__background">
-                    <img class="video__image" src="./src/assets/images/Biodiversity.gif" alt="">
+                    <img class="video__image" src="./src/assets/images/Biodiversity.gif" alt="Biodiversidade">
                 </figure>
-                
 
                 <div class="video__text">
-                    <button class="video__play"><img class="video__image" src="./src/assets/images/Play.png" alt="Botão de play"></button>
-                    <h2 class="video__title">O NOSSO TRABALHO É UM CHAMADO!</h2>
-                    <p class="video__subtitle">Assista o vídeo agora</p>
+                    <button class="video__play"><img class="video__image-play" src="./src/assets/images/Play.png" alt="Botão de play"></button>
+                    <h2 class="video__subtitle">O NOSSO TRABALHO É UM CHAMADO!</h2>
+                    <p class="video__legend">Assista o vídeo agora</p>
                 </div>
             </div>
         </section>
@@ -235,14 +234,14 @@
 
             <div class="carousel__our-projects">
                 <p>VER TODOS OS PROJETOS</p>
-                <img src="./src/assets/images/Right.png" alt="">
+                <img src="./src/assets/images/Right.png" alt="Seta">
             </div>
         </section>
 
         <section class="main__section-how-it-works">  
             <img class="how-it-works__circle" src="./src/assets/images/AnimatedCircle.png" alt="Junte-se a nós e faça parte dessa mudança">
 
-            <img class="how-it-works__image" src="./src/assets/images/Plantation.png" alt="">
+            <img class="how-it-works__image" src="./src/assets/images/Plantation.png" alt="Plantação">
 
             <article class="how-it-works__container">
                 <p class="how-it-works__title">COMO FUNCIONA</p>
@@ -313,12 +312,12 @@
                         <span class="news__date">22 de Março de 2022.</span>
                     </div>
 
-                    <button class="news__button">LEIA MAIS<img class="news__arrow" src="./src/assets/images/Right.png" alt=""></button>
+                    <button class="news__button">LEIA MAIS<img class="news__arrow" src="./src/assets/images/Right.png" alt="Seta"></button>
                 </li>
 
                 <li class="news__item">
                     <div class="news__container">
-                        <img class="news__image" src="./src/assets/images/ParaTerraBoa.png" alt="BPará Terra Boa">
+                        <img class="news__image" src="./src/assets/images/ParaTerraBoa.png" alt="Pará Terra Boa">
 
                         <h3 class="news__title">Fundo Da Amazônia Oriental deve entrar em operação em outubro</h3>
     
@@ -327,7 +326,7 @@
                         <span class="news__date">15 de Agosto de 2022.</span>
                     </div>
 
-                    <button class="news__button">LEIA MAIS<img class="news__arrow" src="./src/assets/images/Right.png" alt=""></button>
+                    <button class="news__button">LEIA MAIS<img class="news__arrow" src="./src/assets/images/Right.png" alt="Seta"></button>
                 </li>
 
                 <li class="news__item">
@@ -341,14 +340,14 @@
                         <span class="news__date">05 de Outubro de 2021.</span>
                     </div>
 
-                    <button class="news__button">LEIA MAIS<img class="news__arrow" src="./src/assets/images/Right.png" alt=""></button>
+                    <button class="news__button">LEIA MAIS<img class="news__arrow" src="./src/assets/images/Right.png" alt="Seta"></button>
                 </li>
             </ul>
         </section>
 
         <section class="main__section-form">
             <div class="form__container"> 
-                <img class="form__decoration" src="./src/assets/images/GreenDecoration.png" alt="">
+                <img class="form__decoration" src="./src/assets/images/GreenDecoration.png" alt="Pontilhado verde">
                 
                 <h3 class="form__title">FALE CONOSCO</h3>
 
@@ -415,6 +414,7 @@
         </div>
     </footer>
     <script src="./src/js/navbar.js"></script>
+    <script src="./src/js/video.js"></script>
     <script src="./src/js/carousel.js"></script>
 </body>
 </html>
