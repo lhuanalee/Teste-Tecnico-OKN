@@ -68,8 +68,18 @@
 
         background-color: $color-primary;
 
+        cursor: pointer;
+
         .news__arrow {
           padding-left: 7px;
+        }
+
+        &:hover {
+          columns: $white;
+
+          background-color: $black;
+
+          transition: 1s;
         }
       }
     }

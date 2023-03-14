@@ -3,9 +3,6 @@
 
   width: 100%;
 
-  margin-top: 193px;
-  padding-top: 40px;
-
   position: relative;
 
   background-color: $color-primary;
@@ -72,10 +69,12 @@
 
           gap: 5px;
 
+          cursor: pointer;
+
           .know-more__title {
             @include title(15px, 400);
 
-            padding: 8px 15px;
+            padding: 8px 11px;
 
             border: 1px solid $white;
             border-radius: 31px;
@@ -88,14 +87,32 @@
           .know-more__figure {
             @include flex-box(flex, row, center, center);
 
-            padding: 6px 13px;
+            padding: 8px 11px;
 
-            border: 1px solid $white;
+            border: 1px solid $black;
             border-radius: 50%;
 
-            .know-more__image {
-              filter: invert(100%);
-            }
+            filter: invert(100%);
+          }
+
+          &:hover .know-more__title {
+            border: 1px solid $black;
+
+            color: $white;
+
+            background-color: $black;
+
+            transition: 1s;
+          }
+
+          &:hover .know-more__figure {
+            border: 1px solid $white;
+
+            filter: invert(100%);
+
+            background-color: $white;
+
+            transition: 0.8s;
           }
         }
       }
@@ -115,12 +132,12 @@
   .carousel__actions {
     @include flex-box(flex, row, space-evenly, center);
 
-    width: 50%;
+    width: 80%;
     height: 38px;
 
     position: absolute;
-    top: 324px;
-    right: 25%;
+    top: 290px;
+    right: 10%;
 
     .actions__button--prev,
     .actions__button--next {
@@ -232,7 +249,6 @@
   }
 
   @media (min-width: 760px) {
-    margin-top: 445px;
     padding: 0;
 
     .carousel__list {
@@ -286,9 +302,5 @@
 
       transform: rotate(90deg);
     }
-  }
-
-  @media (min-width: 1000px) {
-    margin-top: 545px;
   }
 }

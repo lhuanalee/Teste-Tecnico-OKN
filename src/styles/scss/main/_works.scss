@@ -69,10 +69,12 @@
 
       gap: 5px;
 
+      cursor: pointer;
+
       .know-more__title {
         @include title(15px, 400);
 
-        padding: 8px 15px;
+        padding: 8px 11px;
 
         border: 1px solid $black;
         border-radius: 31px;
@@ -83,10 +85,30 @@
       .know-more__figure {
         @include flex-box(flex, row, center, center);
 
-        padding: 6px 13px;
+        padding: 8px 11px;
 
         border: 1px solid $black;
         border-radius: 50%;
+      }
+
+      &:hover .know-more__title {
+        border: 1px solid $color-primary;
+
+        color: $white;
+
+        background-color: $color-primary;
+
+        transition: 1s;
+      }
+
+      &:hover .know-more__figure {
+        border: 1px solid $color-primary-inverted;
+
+        filter: invert(100%);
+
+        background-color: $color-primary-inverted;
+
+        transition: 0.8s;
       }
     }
   }
