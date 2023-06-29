@@ -13,5 +13,5 @@
 
 <ul>
     <li><a href="https://github.com/lhuanalee/Teste-Tecnico-OKN">Repositório;</a></li>
-    <li><a href="https://teste-tecnico-okn.vercel.app/">Deploy.</a></li>
+    <li><a href="https://form-challenge-omega.vercel.app/">Deploy.</a></li>
 </ul>
